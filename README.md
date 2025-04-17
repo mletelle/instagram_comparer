@@ -51,12 +51,12 @@
 6. Se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
 7. Revisá los resultados que aparecen en pantalla. Tocá enter para salir. 
 
-### Opción B – Mac / Linux / Windows con Python
+### Opción B  La manera mas divertida: Mac / Linux / Windows con Python
 
 > Necesitás tener Python 3.9 o superior.  
 > Si no lo tenés, podés descargarlo de <https://www.python.org/downloads/> y seguir el instalador (en Windows recordá marcar “Add Python to PATH”).
 
-1. La manera mas divertida: **Cloná o bajá** este repo  
+1. **Cloná o bajá** este repo  
    * Con Git:  
      ```bash
      git clone https://github.com/mletelle/instagram_comparer.git
@@ -80,6 +80,14 @@ pip install -r requirements.txt
 ````bash
 python -m comparar_instagram
 ````
+
+### Opción C: Script simple en Phyton 
+
+1. Baja el archivo `comparar_instagram.py`
+2. Tenes que tener `followers_1.json` y `following.json` en la misma carpeta que el **.py**
+3. Corre el script: `python3 comparar_instagram.py`
+4. Listo, te sale todo por consola ¯\_(ツ)_/¯
+
 
 ## Preguntas frecuentes
 - ¿Hace falta cuenta de desarrollador en Instagram?
