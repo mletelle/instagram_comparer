@@ -46,7 +46,7 @@
 1. Abrí la pestaña **Releases** en este repositorio
 2. Tocá Assets y tenes 3 archivos para elegir, podes directamente tocar el `instagram_comparer.exe`
 3. Descargá **`instagram_comparer.exe`** en la carpeta que quieras.
-4. Hacé doble‑clic en el Explorador o presiona Ctrl + J para ver las descargas desde el explorador
+4. Presiona Ctrl + J para ver las descargas desde el navegador o anda a tu carpeta de descargas y hacé doble‑clic en el `.exe`
 5. Si dice "Windows protegió su PC", tocá en "Mas informacion" y "Ejecutar de todas formas".
 6. Se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
 7. Revisá los resultados que aparecen en pantalla. Tocá enter para salir. 
