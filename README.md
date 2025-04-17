@@ -83,11 +83,11 @@ python -m comparar_instagram
 
 ## Preguntas frecuentes
 - ¿Hace falta cuenta de desarrollador en Instagram?
-No. Solo tu descarga de datos oficial.
+No. Solo descarga de datos oficial.
 - ¿Se envían mis datos a algún servidor?	
 No. Todo corre localmente en tu computadora.
-- ¿Por qué pide JSON y no CSV?	
-Porque Instagram ofrece la información más completa en JSON.
+- ¿Por qué pide JSON y no CSV/HTML?	
+Porque Instagram ofrece la información más completa en JSON. Y es mas facil ¯\_(ツ)_/¯
 - ¿Puedo borrar los archivos luego?
 Sí, después de ejecutar podés eliminarlos.
 
