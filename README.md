@@ -42,20 +42,3 @@ El programa mostrará:
 
    El ejecutable quedará en `dist\instagram_comparer.exe`.  
    Doble clic o `instagram_comparer.exe` en consola y listo.
-
-## Estructura del repo
-
-```
-instagram_comparer/
-├── comparar_instagram/
-│   ├── __init__.py
-│   └── cli.py
-├── tests/
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
-
-## Licencia
-MIT
-# instagram_comparer
