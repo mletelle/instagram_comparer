@@ -1,5 +1,5 @@
 # Unfollowers Instagram - Comparador de Seguidos/Seguidores 📊
-
+[ 📑 [English Version]](https://github.com/mletelle/instagram_comparer/blob/main/README.en.md)
 > Averiguá de forma sencilla quiénes no te siguen (o a quiénes no seguís) en Instagram.
 
 > Todo corre en tu PC, por lo que no es baneable ni hay peligro de que roben tu informacion (saludos para las app de PlayStore)
