@@ -80,3 +80,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    input("\n🟢  Fin del reporte.  Presioná ENTER para cerrar...")
