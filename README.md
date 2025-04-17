@@ -2,6 +2,8 @@
 
 > Averiguá de forma sencilla quiénes no te siguen (o a quiénes no seguís) en Instagram.
 
+> Todo corre en tu PC, por lo que no es baneable ni hay peligro de que roben tu informacion (saludos para las app de PlayStore)
+
 ---
 
 ## 1. ¿Qué hace este programa?
@@ -42,16 +44,19 @@
 ### Opción A – ¡Sin instalar nada! (Windows)
 
 1. Abrí la pestaña **Releases** en este repositorio
-2. Descargá **`instagram_comparer.exe`**.  
-3. Hacé doble‑clic → se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
-4. Revisá los resultados que aparecen en pantalla.
+2. Tocá Assets y tenes 3 archivos para elegir, podes directamente tocar el `instagram_comparer.exe`
+3. Descargá **`instagram_comparer.exe`** en la carpeta que quieras.
+4. Hacé doble‑clic en el Explorador o presiona Ctrl + J para ver las descargas desde el explorador
+5. Si dice "Windows protegió su PC", tocá en "Mas informacion" y "Ejecutar de todas formas".
+6. Se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
+7. Revisá los resultados que aparecen en pantalla. Tocá enter para salir. 
 
 ### Opción B – Mac / Linux / Windows con Python
 
 > Necesitás tener Python 3.9 o superior.  
 > Si no lo tenés, podés descargarlo de <https://www.python.org/downloads/> y seguir el instalador (en Windows recordá marcar “Add Python to PATH”).
 
-1. **Cloná o bajá** este repo  
+1. La manera mas divertida: **Cloná o bajá** este repo  
    * Con Git:  
      ```bash
      git clone https://github.com/mletelle/instagram_comparer.git
