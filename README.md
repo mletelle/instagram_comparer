@@ -41,7 +41,7 @@
 
 ### Opción A – ¡Sin instalar nada! (Windows)
 
-1. Abrí la pestaña **Releases** en este repositorio(o desde `dist/instagram_comparer.exe`).  
+1. Abrí la pestaña **Releases** en este repositorio
 2. Descargá **`instagram_comparer.exe`**.  
 3. Hacé doble‑clic → se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
 4. Revisá los resultados que aparecen en pantalla.
