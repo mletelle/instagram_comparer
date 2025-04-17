@@ -97,7 +97,7 @@ No. Todo corre localmente en tu computadora.
 - ¿Por qué pide JSON y no CSV/HTML?	
 Porque Instagram ofrece la información más completa en JSON. Y es mas facil ¯\_(ツ)_/¯
 - ¿Puedo borrar los archivos luego?
-Sí, después de ejecutar podés eliminarlos.
+Sí, después de ejecutar podés eliminarlos. Literamente no guarda nada, asi que borralo noma'.
 
 ## Contribuir
 - Hacé un fork del repo.
