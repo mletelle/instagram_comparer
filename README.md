@@ -107,3 +107,4 @@ Sí, después de ejecutar podés eliminarlos. Literamente no guarda nada, asi qu
 
 ## Licencia
 Son un par de lineas en Python flaco. Usalo, modificá y compartí libremente.
+*Dos besitos porque tres es mucha plata*
