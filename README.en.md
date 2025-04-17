@@ -71,14 +71,22 @@
    .venv\Scripts\activate
    # macOS / Linux:
    source .venv/bin/activate````
-3. Instalá dependencias (por las dudas)
+3. Install dependencies (just in case)
 ```bash
 pip install -r requirements.txt
 ````
-5. Ejecutá el programa
+4. Run the program
 ````bash
 python -m comparar_instagram
 ````
+
+### Option C: Simple Python Script
+1. Download the `comparar_instagram.py` file  
+2. Make sure you have `followers_1.json` and `following.json` in the same folder as the **.py** file  
+3. Run the script: `python3 comparar_instagram.py`  
+4. Done! Everything shows up in the console ¯\_(ツ)_/¯
+
+
 ## FAQ
 - Do I need an Instagram developer account?
 No. Just your official data download.
