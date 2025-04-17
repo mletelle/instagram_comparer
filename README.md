@@ -1,4 +1,4 @@
-# Instagram Comparer 📊
+# Unfollowers Instagram - Comparador de Seguidos/Seguidores 📊
 
 > Averiguá de forma sencilla quiénes no te siguen (o a quiénes no seguís) en Instagram.
 
