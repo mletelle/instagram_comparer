@@ -1,78 +1,102 @@
-# Unfollowers Instagram – Followers/Following Comparator 📊
+# Instagram Unfollowers – Followers/Following Comparator 📊  
+[📑 [Versión en Español]](https://github.com/mletelle/instagram_comparer/blob/main/README.md)
 
-> Quickly find out who doesn’t follow you back (or whom you don’t follow) on Instagram.
-
-> Everything runs locally on your PC—no bans, no risk of data theft (unlike some Play Store apps).
+> Easily find out who doesn’t follow you (or whom you don’t follow) on Instagram.  
+> Everything runs locally on your computer — so no bans, no logins, no sketchy data theft (hi PlayStore apps 👋).
 
 ---
 
 ## 1. What does this program do?
 
-1. **Ask Instagram** for two files (“followers” and “following”) that contain your lists.  
-2. **Run the program** → pick those files.  
-3. It shows you:  
-   * 🔴 Accounts you follow **that do NOT follow you back**.  
-   * 🟢 Accounts that follow you **but YOU don’t follow back**.
+1. **You request your data from Instagram** — specifically two files: “followers” and “following”.
+2. **You open the tool** → select those files.
+3. The program shows you:  
+   * Users you follow **who DON’T follow you back**  
+   * Users who follow you **that YOU don’t follow**
 
 ---
 
-## 2. How to get the files from Instagram
+## 2. How to get the data from Instagram
 
-1. **From the mobile app**  
-   1. Open Instagram >  ☰  (Menu) > **Your activity**.  
-   2. Tap **Download your information**.  
-   3. Enter your e‑mail, tap **Next**, choose **JSON**.  
-   4. Instagram will e‑mail a link (may take a few minutes).  
-   5. Download the ZIP, unzip it and look for **`followers_and_following`**:  
-      * ***followers_1.json***  
-      * ***following.json***
+1. **From your phone**  
+   1. Open Instagram > ☰ (Menu) > **Your activity**  
+   2. Choose **Download your information**  
+   3. Enter your email, tap **Next**, and request **JSON** format  
+   4. Instagram will send you a link via email (this may take a few minutes)  
+   5. Download the ZIP, extract it, and find the folder: **`followers_and_following`**  
+      * `followers_1.json`  
+      * `following.json`
 
-2. **From the web (desktop)**  
-   1. Go to [instagram.com](https://instagram.com) and log in.  
-   2. Click your avatar > **Settings**.  
-   3. **Privacy & Security** > **Download Data**.  
-   4. Enter your e‑mail, choose **JSON**, click **Next**.  
-   5. When the e‑mail arrives, download the ZIP, unzip it and locate:  
-      `followers_and_following/followers_1.json` and `followers_and_following/following.json`.
+2. **From a web browser (PC)**  
+   1. Go to [instagram.com](https://instagram.com) and log in  
+   2. Click your avatar > **Settings**  
+   3. Go to **Privacy and security** > **Download data**  
+   4. Enter your email, choose **JSON**, then click “Next”  
+   5. Instagram will send you a link  
+   6. Download the ZIP, extract it, and find the folder: **`followers_and_following`**  
+      * `followers_1.json`  
+      * `following.json`
 
-> ⚠️ Do **not** rename the files; the program expects exactly those names.
+> ⚠️ Do not rename the files — the tool expects those exact names.
 
 ---
 
-## 3. Ways to use the tool
+## 3. How to use this tool
 
-### Option A – No install needed (Windows)
+### Option A – Browser only, no install (Any OS)
 
-1. Open the **Releases** tab in this repository.  
-2. Under **Assets** you’ll see three files—click `instagram_comparer.exe`.  
-3. Download **`instagram_comparer.exe`** to any folder.  
-4. Double‑click it in Explorer or press **Ctrl + J** to see your downloads.  
-5. If Windows shows “Protected your PC”, click **More info** → **Run anyway**.  
-6. A window pops up: select `followers_1.json`, then `following.json`.  
-7. Read the results, press **Enter** to exit.
+1. Download `index.html` (and the `src/` folder if you want a cute logo)  
+2. Open `index.html` in your browser (or drag it into a new tab)  
+3. Select `followers_1.json` and then `following.json`  
+4. Browse the generated profile links  
+5. Boom 
 
-### Option B – Mac / Linux / Windows with Python
+---
 
-> Requires Python 3.9 or newer.  
-> Get it from <https://www.python.org/downloads/> (check “Add Python to PATH” on Windows).
+### Option B – Standalone EXE (Windows only, no install)
+
+1. Go to the **Releases** tab of this repository  
+2. Under Assets, choose the file `instagram_comparer.exe`  
+3. Download it  
+4. Press Ctrl+J to open Downloads or go to your Downloads folder and double-click the file  
+5. If you get “Windows protected your PC”, click **More info** → **Run anyway**  
+6. Select `followers_1.json`, then `following.json`  
+7. Results will be shown in the console — press Enter to exit  
+8. Boom 
+
+---
+
+### Option C – Python script
+
+1. Download `comparar_instagram.py`  
+2. Make sure `followers_1.json` and `following.json` are in the same folder as the **.py**  
+3. Run it:  
+   `python3 comparar_instagram.py`  
+4. That’s it — it all prints to the terminal ¯\\\_(ツ)_/¯
+
+---
+
+### Option D (the most fun): Python + Terminal (Mac / Linux / Windows)
+
+> Requires Python 3.9 or newer
 
 1. **Clone or download** this repo  
    * With Git:  
      ```bash
      git clone https://github.com/mletelle/instagram_comparer.git
      cd instagram_comparer
-     ```  
-   * Without Git: click **Code → Download ZIP**, unzip, enter the folder.
+     ```
+   * Without Git: click **Code → Download ZIP**, unzip and open the folder
 
-2. **(Optional, recommended)** Create a virtual environment  
+2. *(Optional but recommended)* Create a virtual environment  
    ```bash
    python -m venv .venv
    # Windows:
    .venv\Scripts\activate
    # macOS / Linux:
-   source .venv/bin/activate````
-3. Install dependencies (just in case)
-```bash
+   source .venv/bin/activate
+3. Install dependencies (just in case):
+````bash
 pip install -r requirements.txt
 ````
 4. Run the program
@@ -80,28 +104,27 @@ pip install -r requirements.txt
 python -m comparar_instagram
 ````
 
-### Option C: Simple Python Script
-1. Download the `comparar_instagram.py` file  
-2. Make sure you have `followers_1.json` and `following.json` in the same folder as the **.py** file  
-3. Run the script: `python3 comparar_instagram.py`  
-4. Done! Everything shows up in the console ¯\_(ツ)_/¯
+##FAQ
+- Does this send my data anywhere?
+Nope. It’s all local on your device.
+- Is there any risk to my Instagram account?
+None. Check the comparar_instagram.py file yourself — it’s as transparent as it gets.
+- Seriously?
+Yes.
+- Why JSON and not CSV/HTML?
+Instagram gives more detailed info in JSON. Plus, it’s easier to parse ¯\_(ツ)_/¯
+- Can I delete the files afterward?
+Absolutely. The tool doesn’t store anything. Run → done → delete.
+- Do I need a developer account or API key?
+No.
 
+##Contributing
+1. Fork the repo
+2. Create your branch: git checkout -b feature/my-cool-feature
+3. Commit + push
+4. Open a Pull Request 🚀
 
-## FAQ
-- Do I need an Instagram developer account?
-No. Just your official data download.
-- Are my files uploaded anywhere?
-No. Everything runs locally on your computer.
-- Why JSON and not CSV?
-Instagram’s most complete format is JSON.
-- Can I delete the files afterwards?
-Yes, you can remove them once you’re done.
-
-## Contributing
-1. Fork the repo.
-2. Create a branch: git checkout -b feature/new-feature.
-3. Commit & push.
-4. Open a Pull Request—contributions are welcome!
-
-## License
-Just a few lines of Python, mate. Use, modify, and share freely.
+##License
+It’s just a few lines of Python and HTML, mate.
+Use it, remix it, and share it freely.
+Two kisses ‘cause three is too expensive.
