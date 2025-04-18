@@ -1,7 +1,6 @@
 # Unfollowers Instagram - Comparador de Seguidos/Seguidores 📊
 [ 📑 [English Version]](https://github.com/mletelle/instagram_comparer/blob/main/README.en.md)
 > Averiguá de forma sencilla quiénes no te siguen (o a quiénes no seguís) en Instagram.
-
 > Todo corre en tu PC, por lo que no es baneable ni hay peligro de que roben tu informacion (saludos para las app de PlayStore)
 
 ---
@@ -11,8 +10,8 @@
 1. **Le pedís a Instagram** dos archivos (“followers” y “following”) que contienen tu lista de seguidos y seguidores.  
 2. **Abrís el programa** → seleccionás esos archivos.  
 3. El programa te muestra:  
-   * 🔴 Usuarios a los que seguís **y NO te siguen** de vuelta.  
-   * 🟢 Usuarios que te siguen **y VOS no seguís**.
+   * Usuarios a los que seguís **y NO te siguen** de vuelta.  
+   * Usuarios que te siguen **y VOS no seguís**.
 
 ---
 
@@ -31,9 +30,11 @@
    1. Entrá a [instagram.com](https://instagram.com) y logueate.  
    2. Click en tu avatar > **Configuración**.  
    3. **Privacidad y seguridad** > **Descargar datos**.  
-   4. Ingresá tu e‑mail, elegí **JSON** y “Siguiente”.  
-   5. Cuando llegue el correo, bajá el ZIP, descomprimilo y encontrá los mismos archivos:  
-      `followers_and_following/followers_1.json` y `followers_and_following/following.json`.
+   4. Ingresá tu e‑mail, elegí **JSON** y “Siguiente”.
+   5. Instagram te envia un enlace por correo
+   6. Descargá el ZIP, descomprimilo y buscá dentro la carpeta **`followers_and_following`**.  
+      * ***followers_1.json***  
+      * ***following.json***
 
 > ⚠️ No renombres los archivos; el programa los detecta tal cual.
 
@@ -41,28 +42,27 @@
 
 ## 3. Opciones para usar la herramienta
 
-### Opción A – Ejecutable sin instalar nada (Windows)
-
-1. Abrí la pestaña **Releases** en este repositorio
-2. Tocá Assets y tenes 3 archivos para elegir, podes directamente tocar el `instagram_comparer.exe`
-3. Descargá **`instagram_comparer.exe`** en la carpeta que quieras.
-4. Presiona Ctrl + J para ver las descargas desde el navegador o anda a tu carpeta de descargas y hacé doble‑clic en el `.exe`
-5. Si dice "Windows protegió su PC", tocá en "Mas informacion" y "Ejecutar de todas formas".
-6. Se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
-7. Revisá los resultados que aparecen en pantalla. Tocá enter para salir. 
-
-### Opción B – Navegador sin instalar nada (Cualquier SO)
-
+### Opción A – Navegador sin instalar nada (Cualquier SO)
 1. Descargá el archivo `index.html` (y la carpeta `scr/` si queres tener un loguito lindo)
 2. Abri `index.html` (o arrastralo a tu navegador)
 3. Listo, elegi primero `followers_1.json` y luego `following.json`.  
 4. Revisá los link que te genera al perfil de cada persona.
+5. Tuki
 
-### Opción C  La manera mas divertida: Mac / Linux / Windows con Python
+### Opción B – Ejecutable sin instalar nada (Windows)
+1. Abrí la pestaña **Releases** en este repositorio
+2. Tocá Assets y tenes 3 archivos para elegir
+3. Descargá **`instagram_comparer.exe`** 
+4. Presiona Ctrl + J para ver las descargas desde el navegador o anda a tu carpeta de descargas y hacé doble‑clic en el `.exe`
+5. Si dice "Windows protegió su PC", tocá en "Mas informacion" y "Ejecutar de todas formas".
+6. Se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
+7. Revisá los resultados que aparecen en pantalla. Tocá enter para salir.
+8. Tuki
 
+
+
+### Opción C (la manera mas divertida): Mac / Linux / Windows con Python
 > Necesitás tener Python 3.9 o superior.  
-> Si no lo tenés, podés descargarlo de <https://www.python.org/downloads/> y seguir el instalador (en Windows recordá marcar “Add Python to PATH”).
-
 1. **Cloná o bajá** este repo  
    * Con Git:  
      ```bash
@@ -78,7 +78,7 @@
    .venv\Scripts\activate
    # macOS / Linux:
    source .venv/bin/activate
-
+   ````
 3. Instalá dependencias (por las dudas)
 ```bash
 pip install -r requirements.txt
@@ -87,30 +87,34 @@ pip install -r requirements.txt
 ````bash
 python -m comparar_instagram
 ````
+6. Tuki
 
 ### Opción D: Script simple en Phyton 
-
 1. Baja el archivo `comparar_instagram.py`
 2. Tenes que tener `followers_1.json` y `following.json` en la misma carpeta que el **.py**
 3. Corre el script: `python3 comparar_instagram.py`
 4. Listo, te sale todo por consola ¯\_(ツ)_/¯
 
-
 ## Preguntas frecuentes
-- ¿Hace falta cuenta de desarrollador en Instagram?
-No. Solo descarga de datos oficial.
 - ¿Se envían mis datos a algún servidor?	
 No. Todo corre localmente en tu computadora.
+- ¿Corre peligro mi informacion o mi cuenta?
+Ninguno, fijate el `comparar_instagram.py`, mas claro echale agua.
+- ¿Seguro?
+Si.
 - ¿Por qué pide JSON y no CSV/HTML?	
 Porque Instagram ofrece la información más completa en JSON. Y es mas facil ¯\_(ツ)_/¯
 - ¿Puedo borrar los archivos luego?
 Sí, después de ejecutar podés eliminarlos. Literamente no guarda nada, asi que borralo noma'.
+- ¿Hace falta cuenta de desarrollador en Instagram?
+No.
 
-## Contribuir
+
+## Contribui
 - Hacé un fork del repo.
 - Crea tu rama: `git checkout -b feature/nueva-funcionalidad`
 - Commit y push.
-- Abrí un Pull Request. Toda mejora es bienvenida
+- Abrí un Pull Request
 
 ## Licencia
 Son un par de lineas en Python flaco. Usalo, modificá y compartí libremente.
