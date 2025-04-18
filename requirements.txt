@@ -1,1 +1,5 @@
 # No external dependencies
+# === runtime =========================
+# none (usa solo la standard library)
+# === dev / build =====================
+pyinstaller>=6
