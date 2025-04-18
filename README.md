@@ -41,7 +41,7 @@
 
 ## 3. Opciones para usar la herramienta
 
-### Opción A – ¡Sin instalar nada! (Windows)
+### Opción A – Ejecutable sin instalar nada (Windows)
 
 1. Abrí la pestaña **Releases** en este repositorio
 2. Tocá Assets y tenes 3 archivos para elegir, podes directamente tocar el `instagram_comparer.exe`
@@ -51,7 +51,14 @@
 6. Se abrirá una ventana para elegir primero `followers_1.json` y luego `following.json`.  
 7. Revisá los resultados que aparecen en pantalla. Tocá enter para salir. 
 
-### Opción B  La manera mas divertida: Mac / Linux / Windows con Python
+### Opción B – Navegador sin instalar nada (Cualquier SO)
+
+1. Descargá el archivo `index.html` (y la carpeta `scr/` si queres tener un loguito lindo)
+2. Abri `index.html` (o arrastralo a tu navegador)
+3. Listo, elegi primero `followers_1.json` y luego `following.json`.  
+4. Revisá los link que te genera al perfil de cada persona.
+
+### Opción C  La manera mas divertida: Mac / Linux / Windows con Python
 
 > Necesitás tener Python 3.9 o superior.  
 > Si no lo tenés, podés descargarlo de <https://www.python.org/downloads/> y seguir el instalador (en Windows recordá marcar “Add Python to PATH”).
@@ -81,7 +88,7 @@ pip install -r requirements.txt
 python -m comparar_instagram
 ````
 
-### Opción C: Script simple en Phyton 
+### Opción D: Script simple en Phyton 
 
 1. Baja el archivo `comparar_instagram.py`
 2. Tenes que tener `followers_1.json` y `following.json` en la misma carpeta que el **.py**

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Instagram Unfollowers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="src/favicon.ico" />
+
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card: #fff;
+            --primary: #0a66c2;
+            --danger: #e03131;
+            --success: #2b8a3e;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, .06)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", system-ui, sans-serif;
+            background: var(--bg);
+            color: #222;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem 4rem
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 700px;
+            width: 100%;
+            padding: 2rem 2.5rem 3rem
+        }
+
+        h1 {
+            margin: .5rem 0 1.5rem;
+            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: .75rem
+        }
+
+        h1 img {
+            width: 40px;
+            height: 40px
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 1rem
+        }
+
+        input[type=file] {
+            margin-top: .3rem
+        }
+
+        button {
+            margin-top: 2rem;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: .6rem 1.4rem;
+            font-size: 1rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: background .2s
+        }
+
+        button[disabled] {
+            background: #507885;
+            cursor: not-allowed
+        }
+
+        button:not([disabled]):hover {
+            background: #004a99
+        }
+
+        section {
+            margin-top: 2.5rem
+        }
+
+        h2 {
+            margin: 1.8rem 0 .75rem;
+            font-size: 1.25rem
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0
+        }
+
+        li {
+            margin: .25rem 0;
+            padding: .3rem .4rem;
+            border-radius: 4px
+        }
+
+        .danger li {
+            background: #fff3f3
+        }
+
+        .success li {
+            background: #f3fff5
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .fade-in {
+            animation: fade .6s ease-in-out forwards;
+            opacity: 0
+        }
+
+        @keyframes fade {
+            to {
+                opacity: 1
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            min-width: 36px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            background: #eee
+        }
+
+        .primary {
+            background: #d0ebff;
+            color: var(--primary)
+        }
+
+        .danger-bg {
+            background: #ffe3e3;
+            color: var(--danger)
+        }
+
+        .success-bg {
+            background: #d3f9d8;
+            color: var(--success)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1><img src="src/logo.png" alt="Logo" /> Instagram Unfollowers</h1>
+        <p>Herramienta 100% offline, desde tu PC. </p>
+        <p>Subí los archivos <strong>followers_1.json</strong> y <strong>following.json
+            </strong> que descargás desde la app de Instagram.</p>
+
+        <label>Cargá tu followers_1.json
+            <input type="file" id="followers" accept=".json">
+        </label>
+        <label>Cargá tu following.json
+            <input type="file" id="following" accept=".json">
+        </label>
+
+        <button id="compareBtn" disabled>Comparar 🚀</button>
+
+        <div id="summary" class="hidden fade-in" style="margin-top:2rem">
+            <p> <strong>Followers:</strong> <span id="countFollowers" class="badge primary">0</span> &nbsp;•&nbsp;
+                <strong>Following:</strong> <span id="countFollowing" class="badge primary">0</span></p>
+            <p> <strong>No te siguen:</strong> <span id="countNotBack" class="badge danger-bg">0</span> &nbsp;•&nbsp;
+                <strong>No seguís:</strong> <span id="countNotByMe" class="badge success-bg">0</span></p>
+        </div>
+
+        <section id="results" class="hidden fade-in">
+            <h2 class="danger"> Usuarios que seguís y NO te siguen</h2>
+            <ul id="notFollowingBack"></ul>
+            <h2 class="success"> Usuarios que te siguen y VOS no seguís</h2>
+            <ul id="notFollowedByMe"></ul>
+        </section>
+    </div>
+
+    <script>
+        const readJSON = file => new Promise((ok, fail) => { const r = new FileReader(); r.onload = () => { try { ok(JSON.parse(r.result)) } catch (e) { fail(e) } }; r.onerror = () => fail(r.error); r.readAsText(file, "utf-8") });
+        const extract = d => { let a = Array.isArray(d) ? d : d.relationships_following || d.relationships_followers || []; const s = new Set(); a.forEach(e => { const v = e?.string_list_data?.[0]?.value; if (v) s.add(v) }); return s };
+
+        const $f = document.getElementById("followers"), $g = document.getElementById("following"), $btn = document.getElementById("compareBtn");
+        const $sum = document.getElementById("summary"), $res = document.getElementById("results");
+        const $ulBack = document.getElementById("notFollowingBack"), $ulMe = document.getElementById("notFollowedByMe");
+
+        [$f, $g].forEach(i => i.addEventListener("change", () => { $btn.disabled = !($f.files.length && $g.files.length) }));
+
+        $btn.addEventListener("click", async () => {
+            $btn.disabled = true; $ulBack.innerHTML = $ulMe.innerHTML = ""; $res.classList.add("hidden"); $sum.classList.add("hidden");
+            try {
+                const [jf, jg] = await Promise.all([readJSON($f.files[0]), readJSON($g.files[0])]);
+                const followers = extract(jf), following = extract(jg);
+                const notFollowingBack = [...following].filter(u => !followers.has(u)).sort();
+                const notFollowedByMe = [...followers].filter(u => !following.has(u)).sort();
+
+                const render = (arr, ul) => { ul.innerHTML = arr.length ? arr.map(u => `<li><a href="https://instagram.com/${u}" target="_blank">@${u}</a></li>`).join("") : "<li>— Todo en orden 🎉 —</li>" };
+                render(notFollowingBack, $ulBack); render(notFollowedByMe, $ulMe);
+
+                document.getElementById("countFollowers").textContent = followers.size;
+                document.getElementById("countFollowing").textContent = following.size;
+                document.getElementById("countNotBack").textContent = notFollowingBack.length;
+                document.getElementById("countNotByMe").textContent = notFollowedByMe.length;
+
+                $sum.classList.remove("hidden"); $res.classList.remove("hidden");
+            } catch (e) { alert(e) } finally { $btn.disabled = false }
+        });
+    </script>
+</body>
+
+</html>
