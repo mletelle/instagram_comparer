@@ -59,9 +59,13 @@
 7. Revisá los resultados que aparecen en pantalla. Tocá enter para salir.
 8. Tuki
 
+### Opción C: Script simple en Phyton 
+1. Baja el archivo `comparar_instagram.py`
+2. Tenes que tener `followers_1.json` y `following.json` en la misma carpeta que el **.py**
+3. Corre el script: `python3 comparar_instagram.py`
+4. Listo, te sale todo por consola ¯\_(ツ)_/¯
 
-
-### Opción C (la manera mas divertida): Mac / Linux / Windows con Python
+### Opción D (la manera mas divertida): Mac / Linux / Windows con Python
 > Necesitás tener Python 3.9 o superior.  
 1. **Cloná o bajá** este repo  
    * Con Git:  
@@ -89,11 +93,6 @@ python -m comparar_instagram
 ````
 6. Tuki
 
-### Opción D: Script simple en Phyton 
-1. Baja el archivo `comparar_instagram.py`
-2. Tenes que tener `followers_1.json` y `following.json` en la misma carpeta que el **.py**
-3. Corre el script: `python3 comparar_instagram.py`
-4. Listo, te sale todo por consola ¯\_(ツ)_/¯
 
 ## Preguntas frecuentes
 - ¿Se envían mis datos a algún servidor?	
